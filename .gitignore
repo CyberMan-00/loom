@@ -1,0 +1,11 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Obsidian (keep only config, not workspace state)
+.obsidian/workspace.json
+.obsidian/workspace
+
+# Temporary state
+scripts/state.json
+scripts/last-flush.json

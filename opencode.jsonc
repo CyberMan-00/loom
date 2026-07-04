@@ -1,0 +1,61 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "build",
+
+  "command": {
+    "capture": {
+      "template": "I want to save today's session to the knowledge base. Ask me what happened, then write it to {{path:raw/daily/}} as a new session entry.",
+      "description": "Save today's session decisions and lessons to the daily log",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "compile": {
+      "template": "Compile any new or changed daily logs in raw/daily/ into wiki articles (concepts, entities, connections). Read wiki/index.md first to understand what already exists. Update index.md, overview.md, and log.md.",
+      "description": "Compile daily logs into structured wiki articles",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "compile:all": {
+      "template": "Force recompile ALL daily logs in raw/daily/ into wiki articles, including ones already compiled. Read wiki/index.md first, then process everything from scratch.",
+      "description": "Force recompile all daily logs",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "query": {
+      "template": "Search the wiki knowledge base for: {{input:Ask a question about your knowledge base}}",
+      "description": "Ask a question against the knowledge base",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "query:file-back": {
+      "template": "Search the wiki knowledge base and save the answer: {{input:Ask a question (answer will be saved to wiki/qa/)}}",
+      "description": "Query the KB and file the answer back into the wiki",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "lint": {
+      "template": "Run a health check on the wiki. Check for broken links, orphan pages, uncompiled sources, stale articles, missing backlinks, sparse articles, and contradictions. Produce a markdown report.",
+      "description": "Run all 7 wiki health checks",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "lint:structural": {
+      "template": "Run structural health checks only (skip the LLM contradiction check). Check for broken links, orphan pages, uncompiled sources, stale articles, missing backlinks, and sparse articles.",
+      "description": "Run structural lint checks only (free)",
+      "agent": "librarian",
+      "subtask": false
+    },
+    "cleanup": {
+      "template": "Run a full cleanup scan on the wiki. Check for empty articles, sparse articles, orphan pages, broken index entries, and uncompiled sources. Present findings and ask for approval before removing anything.",
+      "description": "Scan for empty/stale wiki articles and clean up",
+      "agent": "librarian",
+      "subtask": false
+    }
+  },
+
+  "skills": {
+    "paths": [
+      ".opencode/skills"
+    ]
+  }
+}
