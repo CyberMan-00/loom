@@ -10,6 +10,7 @@ loom organizes knowledge into three layers:
 
 ```
 raw/daily/         →  Immutable session logs (append-only)
+raw/clippings/     →  Raw web clips (Obsidian Web Clipper)
 wiki/              →  Compiled wiki articles (LLM-maintained)
 SCHEMA.md          →  Agent instructions (co-evolved with conventions)
 ```
