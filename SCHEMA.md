@@ -15,9 +15,9 @@ Adapted from Karpathy's LLM Wiki pattern and coleam00's `claude-memory-compiler`
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│  RAW SOURCES: raw/daily/                             │
-│  (conversation logs — immutable, append-only)        │
-│  You write them by running the `capture` command.    │
+│  RAW SOURCES: raw/daily/ + raw/clippings/             │
+│  (session logs + web clips — immutable, append-only) │
+│  `capture` writes daily logs; web clipper saves clips│
 ├──────────────────────────────────────────────────────┤
 │  THE WIKI: wiki/                                     │
 │  (compiled knowledge — LLM-owned)                    │
@@ -34,7 +34,8 @@ Adapted from Karpathy's LLM Wiki pattern and coleam00's `claude-memory-compiler`
 ```
 loom/
 ├── raw/
-│   └── daily/                       # Session logs (YYYY-MM-DD.md)
+│   ├── daily/                       # Session logs (YYYY-MM-DD.md)
+│   └── clippings/                   # Raw web clips (Obsidian Web Clipper)
 ├── wiki/
 │   ├── index.md                     # [LLM-maintained] Master catalog
 │   ├── log.md                       # [LLM-maintained] Build log
@@ -215,6 +216,26 @@ filed: YYYY-MM-DD
 **Action Items:**
 - [ ] Follow up on X
 ```
+
+### Raw Web Clip (`raw/clippings/<name>.md`)
+
+```markdown
+---
+title: "Clip Title"
+source: "https://original-url.com"
+author:
+published:
+created: YYYY-MM-DD
+description: "Brief description of the clipped content"
+tags:
+  - "clippings"
+  - "topic-tag"
+---
+
+[Content of the web clip — copied verbatim from the source]
+```
+
+Created by pasting from the **Obsidian Web Clipper** browser extension into `raw/clippings/`. These are immutable raw sources, treated the same as daily logs. The `compile` workflow can reference them as sources for wiki articles.
 
 ---
 

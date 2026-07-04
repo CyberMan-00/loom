@@ -50,4 +50,6 @@ Master catalog of all knowledge in this vault. The wiki-compiler agent reads thi
 | Source | Path |
 |--------|------|
 | Daily session logs | `raw/daily/` |
+| Web clippings | `raw/clippings/` |
 | 2026-07-04 — Wiki Knowledge Base Setup | `raw/daily/2026-07-04.md` |
+| Topics — skills.sh | `raw/clippings/Topics — skills.sh.md` |

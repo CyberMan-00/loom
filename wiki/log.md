@@ -29,6 +29,13 @@ Chronological record of every operation. Each entry starts with a consistent pre
 - Result: 5 ✅ Pass, 1 ⚠️ Sparse article, 1 ⚠️ Missing backlinks
 - See report for details
 
+## [2026-07-04T15:10:00] update | Added raw/clippings/ as new raw source type
+- Added `raw/clippings/` to README.md architecture diagram
+- Added `raw/clippings/` to SCHEMA.md directory structure
+- Added raw web clip format template to SCHEMA.md
+- Updated wiki/index.md Raw Sources with clippings entry
+- Updated wiki/overview.md Source Count with web clippings row
+
 ## [2026-07-04T13:50:00] rename | pod_vault_2 → loom
 - Renamed vault directory from `pod_vault_2` to **loom**
 - Updated all references in SCHEMA.md, agent configs, subagent configs, and wiki articles

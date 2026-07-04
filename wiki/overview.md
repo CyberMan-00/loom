@@ -35,6 +35,7 @@ OpenCode session
 | Source | Count |
 |--------|-------|
 | Daily logs | 1 |
+| Web clippings | 1 |
 | Concept articles | 2 |
 | Connection articles | 1 |
 | Entity articles | 1 |
